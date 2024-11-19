@@ -6,9 +6,9 @@ extends CharacterBody2D
 @export var acceleration: float = 900.0
 @export var threshold: float = 0.9
 
-var mother: CharacterBody2D
+var mother: Mother
 
-@onready var player: CharacterBody2D = get_tree().get_first_node_in_group(&"player") as CharacterBody2D
+@onready var player: Player = get_tree().get_first_node_in_group(&"player") as Player
 @onready var hp: int = 3
 
 
@@ -34,4 +34,5 @@ func _physics_process(delta: float) -> void:
 func hit() -> void:
 	hp -= 1
 	if hp <= 0:
+		mother._on_child_died()
 		queue_free()
