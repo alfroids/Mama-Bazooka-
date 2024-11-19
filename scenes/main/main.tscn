@@ -15,9 +15,9 @@ position = Vector2(220, 101)
 [node name="Mother" parent="." instance=ExtResource("2_cgwta")]
 position = Vector2(-349, -103)
 
-[node name="Player2" parent="." instance=ExtResource("4_id310")]
+[node name="Player" parent="." instance=ExtResource("4_id310")]
 
-[node name="Camera2D" type="Camera2D" parent="Player2"]
+[node name="Camera2D" type="Camera2D" parent="Player"]
 process_callback = 0
 position_smoothing_enabled = true
 

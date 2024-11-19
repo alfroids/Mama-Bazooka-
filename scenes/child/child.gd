@@ -1,3 +1,4 @@
+class_name Child
 extends CharacterBody2D
 
 
@@ -8,6 +9,7 @@ extends CharacterBody2D
 var mother: CharacterBody2D
 
 @onready var player: CharacterBody2D = get_tree().get_first_node_in_group(&"player") as CharacterBody2D
+@onready var hp: int = 3
 
 
 func _physics_process(delta: float) -> void:
@@ -27,3 +29,9 @@ func _physics_process(delta: float) -> void:
 		velocity = velocity.move_toward(speed * mother_dir, delta * acceleration)
 
 	move_and_slide()
+
+
+func hit() -> void:
+	hp -= 1
+	if hp <= 0:
+		queue_free()
