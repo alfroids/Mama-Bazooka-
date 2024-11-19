@@ -147,10 +147,10 @@ collision_mask = 0
 motion_mode = 1
 script = ExtResource("1_d1bcc")
 
-[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+[node name="MotherSprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_efrmt")
-animation = &"attack"
-frame_progress = 0.714989
+animation = &"walk_front"
+autoplay = "walk_front"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)

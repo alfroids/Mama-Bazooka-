@@ -213,9 +213,10 @@ collision_mask = 0
 motion_mode = 1
 script = ExtResource("1_hya73")
 
-[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+[node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ap2we")
-animation = &"idle_front"
+animation = &"walk_front"
+autoplay = "walk_front"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 0.5)

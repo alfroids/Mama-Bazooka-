@@ -102,7 +102,8 @@ script = ExtResource("1_18v1x")
 
 [node name="ChildSprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_bfcx1")
-animation = &"walk_back"
+animation = &"walk_front"
+autoplay = "walk_front"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)

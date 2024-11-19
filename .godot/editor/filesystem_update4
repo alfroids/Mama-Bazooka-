@@ -1,6 +1,4 @@
-res://scenes/main/main.tscn
 res://scenes/player/player.tscn
-res://scenes/weapon/weapon.tscn
-res://scenes/child/child.tscn
 res://scenes/mother/mother.tscn
-res://scenes/child/child.gd
+res://scenes/child/child.tscn
+res://scenes/main/main.tscn
