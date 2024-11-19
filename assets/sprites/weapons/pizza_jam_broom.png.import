@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dlcjus3jwgeqb"
-path="res://.godot/imported/pizza_jam_player.png-68172d74508c8b34d407497fb1254772.ctex"
+uid="uid://c0e2r2c4kdv1h"
+path="res://.godot/imported/pizza_jam_broom.png-01298843ffd53f4b05bb2dc2aedf469b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/player/pizza_jam_player.png"
-dest_files=["res://.godot/imported/pizza_jam_player.png-68172d74508c8b34d407497fb1254772.ctex"]
+source_file="res://assets/sprites/weapons/pizza_jam_broom.png"
+dest_files=["res://.godot/imported/pizza_jam_broom.png-01298843ffd53f4b05bb2dc2aedf469b.ctex"]
 
 [params]
 

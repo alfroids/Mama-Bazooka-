@@ -1,8 +1,9 @@
 [gd_scene load_steps=30 format=3 uid="uid://cllgnoyqonuhs"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_hya73"]
-[ext_resource type="Texture2D" uid="uid://dlcjus3jwgeqb" path="res://sprites/player/pizza_jam_player.png" id="2_7u87c"]
+[ext_resource type="Texture2D" uid="uid://dlcjus3jwgeqb" path="res://assets/sprites/player/pizza_jam_player.png" id="2_7u87c"]
 [ext_resource type="PackedScene" uid="uid://bs6hubyufn6uj" path="res://scenes/weapon/weapon.tscn" id="3_kiq52"]
+
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qbnw5"]
 atlas = ExtResource("2_7u87c")

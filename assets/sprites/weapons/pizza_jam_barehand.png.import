@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b7ohixel8ibjw"
-path="res://.godot/imported/pizza_jam_barehand.png-98e9e7ba3b3139fa89c62e2c0deeabf5.ctex"
+path="res://.godot/imported/pizza_jam_barehand.png-791041816374e5f7630c95a0f7287390.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/weapons/pizza_jam_barehand.png"
-dest_files=["res://.godot/imported/pizza_jam_barehand.png-98e9e7ba3b3139fa89c62e2c0deeabf5.ctex"]
+source_file="res://assets/sprites/weapons/pizza_jam_barehand.png"
+dest_files=["res://.godot/imported/pizza_jam_barehand.png-791041816374e5f7630c95a0f7287390.ctex"]
 
 [params]
 

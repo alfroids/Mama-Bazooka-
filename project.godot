@@ -27,9 +27,9 @@ window/vsync/vsync_mode=0
 
 folder_colors={
 "res://assets/": "red",
+"res://assets/sprites/": "red",
 "res://globals/": "purple",
-"res://scenes/": "green",
-"res://sprites/": "red"
+"res://scenes/": "green"
 }
 
 [global_group]

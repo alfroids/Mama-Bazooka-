@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://sjn1yx5kmbwr"
-path="res://.godot/imported/pizza_jam_kid.png-8857f021566948f3021c0491e5cffc38.ctex"
+uid="uid://urykhi3j4s8d"
+path="res://.godot/imported/pizza_jam_enemy.png-cb5532588d3c61df8e358bcbbf1424dc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/enemies/pizza_jam_kid.png"
-dest_files=["res://.godot/imported/pizza_jam_kid.png-8857f021566948f3021c0491e5cffc38.ctex"]
+source_file="res://assets/sprites/enemies/pizza_jam_enemy.png"
+dest_files=["res://.godot/imported/pizza_jam_enemy.png-cb5532588d3c61df8e358bcbbf1424dc.ctex"]
 
 [params]
 

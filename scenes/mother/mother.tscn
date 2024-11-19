@@ -1,7 +1,8 @@
 [gd_scene load_steps=21 format=3 uid="uid://d0fe468t2pbld"]
 
 [ext_resource type="Script" path="res://scenes/mother/mother.gd" id="1_d1bcc"]
-[ext_resource type="Texture2D" uid="uid://urykhi3j4s8d" path="res://sprites/enemies/pizza_jam_enemy.png" id="2_cs5jm"]
+[ext_resource type="Texture2D" uid="uid://urykhi3j4s8d" path="res://assets/sprites/enemies/pizza_jam_enemy.png" id="2_cs5jm"]
+
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ykkji"]
 atlas = ExtResource("2_cs5jm")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://urykhi3j4s8d"
-path="res://.godot/imported/pizza_jam_enemy.png-0189b4d94a84e62c5032d5eff580008f.ctex"
+uid="uid://dckipshsa2jrl"
+path="res://.godot/imported/pizza_jam_flipflop.png-950fa57c43c19dad196d3c656807bf31.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/enemies/pizza_jam_enemy.png"
-dest_files=["res://.godot/imported/pizza_jam_enemy.png-0189b4d94a84e62c5032d5eff580008f.ctex"]
+source_file="res://assets/sprites/weapons/pizza_jam_flipflop.png"
+dest_files=["res://.godot/imported/pizza_jam_flipflop.png-950fa57c43c19dad196d3c656807bf31.ctex"]
 
 [params]
 
