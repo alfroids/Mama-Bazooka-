@@ -3,3 +3,4 @@ res://scenes/player/player.tscn
 res://scenes/weapon/weapon.tscn
 res://scenes/child/child.tscn
 res://scenes/mother/mother.tscn
+res://scenes/child/child.gd

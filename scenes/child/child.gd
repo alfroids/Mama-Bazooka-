@@ -22,10 +22,10 @@ func _physics_process(delta: float) -> void:
 		mother_dir = global_position.direction_to(mother.global_position)
 
 	if player_dir.dot(mother_dir) >= threshold:
-		($Sprite2D as Sprite2D).modulate = Color.WHITE
+		($ChildSprite as AnimatedSprite2D).modulate = Color.WHITE
 		velocity = velocity.move_toward(speed * (-player_dir), delta * acceleration)
 	else:
-		($Sprite2D as Sprite2D).modulate = Color.RED
+		($ChildSprite as AnimatedSprite2D).modulate = Color.RED
 		velocity = velocity.move_toward(speed * mother_dir, delta * acceleration)
 
 	move_and_slide()
