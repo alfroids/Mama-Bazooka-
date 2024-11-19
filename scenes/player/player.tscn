@@ -1,92 +1,19 @@
-[gd_scene load_steps=9 format=3 uid="uid://clgqlp0q7xll8"]
+[gd_scene load_steps=4 format=3 uid="uid://cllgnoyqonuhs"]
 
-[ext_resource type="Script" path="res://scenes/player/player.gd" id="1_lf7bw"]
-[ext_resource type="Texture2D" uid="uid://dbkq3c5nxrv5y" path="res://scenes/player/godot_8d_movement.png" id="2_m88i8"]
-[ext_resource type="Script" path="res://addons/godot_state_charts/state_chart.gd" id="3_8xyse"]
-[ext_resource type="Script" path="res://addons/godot_state_charts/compound_state.gd" id="4_cxyiv"]
-[ext_resource type="Script" path="res://addons/godot_state_charts/atomic_state.gd" id="5_bjhsr"]
-[ext_resource type="Script" path="res://addons/godot_state_charts/transition.gd" id="6_tmrlc"]
-[ext_resource type="PackedScene" uid="uid://bcwkugn6v3oy7" path="res://addons/godot_state_charts/utilities/state_chart_debugger.tscn" id="7_fxrgc"]
+[ext_resource type="Texture2D" uid="uid://d0jfskfgad8wc" path="res://icon.svg" id="1_0qx8s"]
+[ext_resource type="Script" path="res://scenes/player/player.gd" id="1_hya73"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ttet7"]
-radius = 36.0139
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xoqqc"]
+size = Vector2(123, 125)
 
-[node name="Player" type="CharacterBody2D"]
-collision_layer = 2
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+collision_mask = 0
 motion_mode = 1
-script = ExtResource("1_lf7bw")
-max_speed = 400.0
-dash_speed = 1000.0
-acceleration = 2000.0
-drag = 1200.0
+script = ExtResource("1_hya73")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(2, 2)
-texture = ExtResource("2_m88i8")
-hframes = 3
-vframes = 3
+texture = ExtResource("1_0qx8s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_ttet7")
-
-[node name="StateChart" type="Node" parent="."]
-script = ExtResource("3_8xyse")
-
-[node name="CompoundState" type="Node" parent="StateChart"]
-script = ExtResource("4_cxyiv")
-initial_state = NodePath("Idle")
-
-[node name="Idle" type="Node" parent="StateChart/CompoundState"]
-script = ExtResource("5_bjhsr")
-
-[node name="ToMove" type="Node" parent="StateChart/CompoundState/Idle"]
-script = ExtResource("6_tmrlc")
-to = NodePath("../../Move")
-event = &"started_moving"
-delay_in_seconds = "0.0"
-
-[node name="Move" type="Node" parent="StateChart/CompoundState"]
-script = ExtResource("5_bjhsr")
-
-[node name="ToIdle" type="Node" parent="StateChart/CompoundState/Move"]
-script = ExtResource("6_tmrlc")
-to = NodePath("../../Idle")
-event = &"stopped_moving"
-delay_in_seconds = "0.0"
-
-[node name="ToDash" type="Node" parent="StateChart/CompoundState/Move"]
-script = ExtResource("6_tmrlc")
-to = NodePath("../../Dash")
-event = &"started_dashing"
-delay_in_seconds = "0.0"
-
-[node name="Dash" type="Node" parent="StateChart/CompoundState"]
-script = ExtResource("5_bjhsr")
-
-[node name="ToMove" type="Node" parent="StateChart/CompoundState/Dash"]
-script = ExtResource("6_tmrlc")
-to = NodePath("../../Move")
-event = &"stopped_dashing"
-delay_in_seconds = "0.0"
-
-[node name="DashCooldownTimer" type="Timer" parent="."]
-wait_time = 0.5
-one_shot = true
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="StateChartDebugger" parent="CanvasLayer" instance=ExtResource("7_fxrgc")]
-offset_left = 1524.0
-offset_top = 42.0
-offset_right = -53.0
-offset_bottom = -581.0
-size_flags_horizontal = 8
-size_flags_vertical = 4
-initial_node_to_watch = NodePath("../../StateChart")
-
-[connection signal="state_entered" from="StateChart/CompoundState/Idle" to="." method="_on_idle_state_entered"]
-[connection signal="state_physics_processing" from="StateChart/CompoundState/Idle" to="." method="_on_idle_state_physics_processing"]
-[connection signal="state_physics_processing" from="StateChart/CompoundState/Move" to="." method="_on_move_state_physics_processing"]
-[connection signal="state_entered" from="StateChart/CompoundState/Dash" to="." method="_on_dash_state_entered"]
-[connection signal="state_exited" from="StateChart/CompoundState/Dash" to="." method="_on_dash_state_exited"]
-[connection signal="state_physics_processing" from="StateChart/CompoundState/Dash" to="." method="_on_dash_state_physics_processing"]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_xoqqc")

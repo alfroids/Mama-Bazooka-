@@ -1,2 +1,10 @@
 res://scenes/player/player.tscn
 res://scenes/player/player.gd
+res://scenes/child/child.tscn
+res://scenes/mother/mother.tscn
+res://scenes/child/child.gd
+res://scenes/main/main.tscn
+res://scenes/mother/mother.gd
+res://scenes/main/main.gd
+res://scenes/player/player_.tscn
+res://scenes/player/player_.gd

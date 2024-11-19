@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://ci3q2v3txsuqn"]
+
+[ext_resource type="PackedScene" uid="uid://dk3uk82jpnnu8" path="res://scenes/child/child.tscn" id="1_7kk1q"]
+[ext_resource type="Script" path="res://scenes/main/main.gd" id="1_fc7y6"]
+[ext_resource type="PackedScene" uid="uid://d0fe468t2pbld" path="res://scenes/mother/mother.tscn" id="2_cgwta"]
+[ext_resource type="PackedScene" uid="uid://cllgnoyqonuhs" path="res://scenes/player/player.tscn" id="4_id310"]
+[ext_resource type="Texture2D" uid="uid://d0jfskfgad8wc" path="res://icon.svg" id="5_yjks1"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_fc7y6")
+
+[node name="Child" parent="." instance=ExtResource("1_7kk1q")]
+position = Vector2(220, 101)
+
+[node name="Mother" parent="." instance=ExtResource("2_cgwta")]
+position = Vector2(-349, -103)
+
+[node name="Player2" parent="." instance=ExtResource("4_id310")]
+
+[node name="Camera2D" type="Camera2D" parent="Player2"]
+process_callback = 0
+position_smoothing_enabled = true
+
+[node name="BG" type="CanvasLayer" parent="."]
+layer = -1
+follow_viewport_enabled = true
+
+[node name="Floor" type="Sprite2D" parent="BG"]
+modulate = Color(0.105882, 0.0901961, 0.105882, 0.341176)
+texture_repeat = 2
+texture = ExtResource("5_yjks1")
+region_enabled = true
+region_rect = Rect2(0, 0, 10000, 10000)
