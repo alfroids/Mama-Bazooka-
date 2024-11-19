@@ -26,7 +26,6 @@ window/vsync/vsync_mode=0
 [file_customization]
 
 folder_colors={
-"res://addons/": "gray",
 "res://assets/": "red",
 "res://globals/": "purple",
 "res://scenes/": "green"
