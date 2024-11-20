@@ -7,8 +7,8 @@
 
 [sub_resource type="Animation" id="Animation_jo00l"]
 resource_name = "slide1_fadein"
-length = 8.0
-step = 1.0
+length = 6.0
+step = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -36,14 +36,14 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("MarginContainer/VBoxContainer/Button:visible")
+tracks/2/path = NodePath("MarginContainer/VBoxContainer/Button:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(8),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"times": PackedFloat32Array(0, 2, 4, 5.5, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_mxcc4"]
@@ -75,20 +75,20 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("MarginContainer/VBoxContainer/Button:visible")
+tracks/2/path = NodePath("MarginContainer/VBoxContainer/Button:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_3x5tq"]
 resource_name = "slide2_fadein"
-length = 8.0
-step = 1.0
+length = 6.0
+step = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -113,11 +113,23 @@ tracks/1/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MarginContainer/VBoxContainer/Button:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2, 4, 5.5, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_6ms13"]
 resource_name = "slide3_fadein"
-length = 8.0
-step = 1.0
+length = 6.0
+step = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -141,6 +153,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MarginContainer/VBoxContainer/Button:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2, 4, 5.5, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0gm7r"]

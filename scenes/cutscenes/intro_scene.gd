@@ -5,6 +5,7 @@ var current_animation = 0
 var play_cur_anim = animation_list[0]
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer as AnimationPlayer
+@onready var button: Button = $MarginContainer/VBoxContainer/Button as Button
 
 func _on_button_pressed():
 	current_animation += 1
