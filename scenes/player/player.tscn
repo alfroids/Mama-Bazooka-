@@ -134,7 +134,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle_front",
-"speed": 2.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -215,8 +215,8 @@ script = ExtResource("1_hya73")
 
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ap2we")
-animation = &"walk_front"
-autoplay = "walk_front"
+animation = &"idle_front"
+autoplay = "idle_front"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_xoqqc")
