@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bvbottqofkjj3"]
+
+[ext_resource type="PackedScene" uid="uid://2xrbd7m4kls2" path="res://scenes/room/room.tscn" id="1_05uwd"]
+[ext_resource type="PackedScene" uid="uid://cllgnoyqonuhs" path="res://scenes/player/player.tscn" id="2_ot471"]
+[ext_resource type="PackedScene" uid="uid://0brj4rscmc1b" path="res://scenes/tutorial/tutorial_child.tscn" id="3_sfnoy"]
+
+[node name="Tutorial" type="Node2D"]
+
+[node name="Room" parent="." instance=ExtResource("1_05uwd")]
+
+[node name="Player" parent="." instance=ExtResource("2_ot471")]
+position = Vector2(-253, -238)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(2, 2)
+process_callback = 0
+
+[node name="TutorialChild" parent="." instance=ExtResource("3_sfnoy")]
+position = Vector2(192, -298)

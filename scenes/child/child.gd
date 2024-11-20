@@ -7,12 +7,12 @@ signal fainted()
 @export var speed: float = 300.0
 @export var acceleration: float = 900.0
 @export var threshold: float = 0.9
+@export var sprite: AnimatedSprite2D
 
 var mother: Mother
 
 @onready var player: Player = get_tree().get_first_node_in_group(&"player") as Player
 @onready var hp: int = 3
-@onready var animated_sprite: AnimatedSprite2D = $ChildSprite as AnimatedSprite2D
 
 func _physics_process(delta: float) -> void:
 	var player_dir: Vector2
@@ -20,9 +20,9 @@ func _physics_process(delta: float) -> void:
 		player_dir = global_position.direction_to(player.global_position)
 
 		if player_dir.y > 0:
-			animated_sprite.animation = "walk_back"
+			sprite.animation = "walk_back"
 		if player_dir.y < 0:
-			animated_sprite.animation = "walk_front"
+			sprite.animation = "walk_front"
 
 	var mother_dir: Vector2
 	if mother:
@@ -45,10 +45,10 @@ func hit() -> void:
 		fainted.emit()
 		queue_free()
 	else:
-		animated_sprite.rotation = 3 * PI / 4
+		sprite.rotation = 3 * PI / 4
 		var tween: Tween = create_tween()
 		tween.tween_property(
-			animated_sprite,
+			sprite,
 			^"rotation",
 			0,
 			0.25,
