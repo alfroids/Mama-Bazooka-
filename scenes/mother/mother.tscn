@@ -228,6 +228,7 @@ frame_progress = 0.697164
 shape = SubResource("RectangleShape2D_m37a2")
 
 [node name="StunTimer" type="Timer" parent="."]
+one_shot = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
