@@ -9,6 +9,13 @@ extends CharacterBody2D
 @onready var is_stunned: bool = false
 @onready var stun_timer: Timer = $StunTimer as Timer
 @onready var animated_sprite: AnimatedSprite2D = $MotherSprite as AnimatedSprite2D
+@onready var animation_player: AnimationPlayer = $AnimationPlayer as AnimationPlayer
+
+
+func _ready() -> void:
+	animation_player.speed_scale = 3
+	animation_player.play(&"moving")
+
 
 func _physics_process(delta: float) -> void:
 	if is_stunned:
@@ -17,7 +24,7 @@ func _physics_process(delta: float) -> void:
 	if player:
 		var player_dir: Vector2 = global_position.direction_to(player.global_position)
 		velocity = velocity.move_toward(speed * player_dir, delta * acceleration)
-		
+
 		if player_dir.y > 0:
 			animated_sprite.animation = "walk_front"
 		if player_dir.y < 0:
@@ -37,3 +44,4 @@ func _on_stun_timer_timeout() -> void:
 
 func _on_child_fainted() -> void:
 	speed *= 2
+	animation_player.speed_scale *= 2

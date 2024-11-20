@@ -18,7 +18,7 @@ func _physics_process(delta: float) -> void:
 	var player_dir: Vector2
 	if player:
 		player_dir = global_position.direction_to(player.global_position)
-		
+
 		if player_dir.y > 0:
 			animated_sprite.animation = "walk_back"
 		if player_dir.y < 0:
@@ -44,3 +44,12 @@ func hit() -> void:
 	if hp <= 0:
 		fainted.emit()
 		queue_free()
+	else:
+		animated_sprite.rotation = PI / 2
+		var tween: Tween = create_tween()
+		tween.tween_property(
+			animated_sprite,
+			^"rotation",
+			0,
+			0.2,
+		).set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
