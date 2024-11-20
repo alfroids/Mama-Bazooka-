@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://mr7bh6v2j7ef"]
+
+[ext_resource type="AudioStream" uid="uid://qf24wov3f200" path="res://assets/sounds/pizza_jam_song_v3.wav" id="1_63568"]
+
+[node name="Music" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_63568")

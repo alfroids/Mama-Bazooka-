@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://c8vmk5ltxdmx4"]
+[gd_scene load_steps=12 format=3 uid="uid://c8vmk5ltxdmx4"]
 
 [ext_resource type="Script" path="res://scenes/cutscenes/intro_scene.gd" id="1_ayub4"]
 [ext_resource type="Texture2D" uid="uid://7oqkj3427wap" path="res://assets/cutscenes/cutscene_slide1.png" id="1_icmfm"]
 [ext_resource type="Texture2D" uid="uid://cna4gsmaoqr8p" path="res://assets/cutscenes/cutscene_slide2.png" id="3_4ybe7"]
 [ext_resource type="Texture2D" uid="uid://ry68qgwq2i6t" path="res://assets/cutscenes/cutscene_slide3.png" id="4_72nmf"]
+[ext_resource type="AudioStream" uid="uid://wfx5ix4dutqd" path="res://assets/sounds/pizza_jam_introsong_tuba.wav" id="5_hlswf"]
 
 [sub_resource type="Animation" id="Animation_mxcc4"]
 length = 0.001
@@ -311,5 +312,10 @@ libraries = {
 "": SubResource("AnimationLibrary_0gm7r")
 }
 autoplay = "slide1_fadein"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_hlswf")
+volume_db = -5.0
+autoplay = true
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
