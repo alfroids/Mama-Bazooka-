@@ -13,4 +13,4 @@ func _on_button_pressed():
 		play_cur_anim = animation_list[current_animation]
 		animation_player.play(play_cur_anim)
 	else:
-		get_tree().change_scene_to_file("res://scenes/main/main.tscn")
+		get_tree().change_scene_to_file("res://scenes/house/house.tscn")
