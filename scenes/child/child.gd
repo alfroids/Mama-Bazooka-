@@ -45,11 +45,11 @@ func hit() -> void:
 		fainted.emit()
 		queue_free()
 	else:
-		animated_sprite.rotation = PI / 2
+		animated_sprite.rotation = 3 * PI / 4
 		var tween: Tween = create_tween()
 		tween.tween_property(
 			animated_sprite,
 			^"rotation",
 			0,
-			0.2,
+			0.25,
 		).set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
