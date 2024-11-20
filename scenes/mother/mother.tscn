@@ -222,7 +222,7 @@ script = ExtResource("1_d1bcc")
 sprite_frames = SubResource("SpriteFrames_efrmt")
 animation = &"fury_attack"
 autoplay = "walk_front"
-frame_progress = 0.273326
+frame_progress = 0.697164
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_m37a2")
