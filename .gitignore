@@ -1,5 +1,10 @@
 # Godot 4+ specific ignores
 .godot/
+.godot/editor/editor_layout.cfg
+.godot/editor/filesystem_cache*
+.godot/editor/filesystem_update*
+.godot/editor/project_metadata.cfg
+
 
 # Godot-specific ignores
 .import/
