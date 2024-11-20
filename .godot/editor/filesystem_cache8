@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1732067193
+::res://::1732067738
 icon.svg::CompressedTexture2D::8932898804301064074::1731970321::1732051309::1::::<><>::
 LICENSE.md::TextFile::-1::1731970297::0::1::::<><>::
 README.md::TextFile::-1::1731970297::0::1::::<><>::
@@ -24,9 +24,9 @@ child.tscn::PackedScene::7920187037777443509::1732066749::0::1::::<><>::res://sc
 ::res://scenes/door/::1732066748
 door.gd::GDScript::-1::1732066661::0::1::::<>Interactable<>::
 door.tscn::PackedScene::8134769329428803791::1732066748::0::1::::<><>::res://scenes/door/door.gd
-::res://scenes/main/::1732067103
+::res://scenes/main/::1732067197
 main.gd::GDScript::-1::1732066662::0::1::::<>Node2D<>::
-main.tscn::PackedScene::5393175529063447133::1732067103::0::1::::<><>::uid://dk3uk82jpnnu8::::res://scenes/child/child.tscn<>res://scenes/main/main.gd<>uid://d0fe468t2pbld::::res://scenes/mother/mother.tscn<>uid://2xrbd7m4kls2::::res://scenes/room/room.tscn<>uid://cllgnoyqonuhs::::res://scenes/player/player.tscn
+main.tscn::PackedScene::5393175529063447133::1732067197::0::1::::<><>::uid://dk3uk82jpnnu8::::res://scenes/child/child.tscn<>res://scenes/main/main.gd<>uid://d0fe468t2pbld::::res://scenes/mother/mother.tscn<>uid://2xrbd7m4kls2::::res://scenes/room/room.tscn<>uid://cllgnoyqonuhs::::res://scenes/player/player.tscn
 ::res://scenes/mother/::1732066748
 mother.gd::GDScript::-1::1732066662::0::1::::Mother<>CharacterBody2D<>::
 mother.tscn::PackedScene::8924601366897064901::1732066748::0::1::::<><>::res://scenes/mother/mother.gd<>uid://urykhi3j4s8d::::res://assets/sprites/enemies/pizza_jam_enemy.png
