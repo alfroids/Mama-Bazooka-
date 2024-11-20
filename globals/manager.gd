@@ -1,4 +1,4 @@
 extends Node
 
 
-@onready var horde_size: int = 4
+@onready var horde_size: int = 0
