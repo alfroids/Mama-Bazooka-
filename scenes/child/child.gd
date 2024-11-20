@@ -12,12 +12,17 @@ var mother: Mother
 
 @onready var player: Player = get_tree().get_first_node_in_group(&"player") as Player
 @onready var hp: int = 3
-
+@onready var animated_sprite: AnimatedSprite2D = $ChildSprite as AnimatedSprite2D
 
 func _physics_process(delta: float) -> void:
 	var player_dir: Vector2
 	if player:
 		player_dir = global_position.direction_to(player.global_position)
+		
+		if player_dir.y > 0:
+			animated_sprite.animation = "walk_back"
+		if player_dir.y < 0:
+			animated_sprite.animation = "walk_front"
 
 	var mother_dir: Vector2
 	if mother:
