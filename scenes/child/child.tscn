@@ -108,3 +108,9 @@ autoplay = "walk_front"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_5w8hw")
+
+[node name="Anchor" type="Node2D" parent="."]
+
+[node name="OffScreenIndicator" type="Polygon2D" parent="Anchor"]
+position = Vector2(-8, 0)
+polygon = PackedVector2Array(-8, -8, -8, 8, 8, 0)
