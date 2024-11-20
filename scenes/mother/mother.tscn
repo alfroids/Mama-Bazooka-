@@ -3,7 +3,6 @@
 [ext_resource type="Script" path="res://scenes/mother/mother.gd" id="1_d1bcc"]
 [ext_resource type="Texture2D" uid="uid://urykhi3j4s8d" path="res://assets/sprites/enemies/pizza_jam_enemy.png" id="2_cs5jm"]
 
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_ykkji"]
 atlas = ExtResource("2_cs5jm")
 region = Rect2(0, 96, 32, 32)
@@ -140,11 +139,11 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m37a2"]
-size = Vector2(124, 128)
+size = Vector2(16, 32)
 
 [node name="Mother" type="CharacterBody2D"]
 collision_layer = 4
-collision_mask = 0
+collision_mask = 8
 motion_mode = 1
 script = ExtResource("1_d1bcc")
 
@@ -154,7 +153,6 @@ animation = &"walk_front"
 autoplay = "walk_front"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_m37a2")
 
 [node name="StunTimer" type="Timer" parent="."]

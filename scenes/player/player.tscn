@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://dlcjus3jwgeqb" path="res://assets/sprites/player/pizza_jam_player.png" id="2_7u87c"]
 [ext_resource type="PackedScene" uid="uid://bs6hubyufn6uj" path="res://scenes/weapon/weapon.tscn" id="3_kiq52"]
 
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_qbnw5"]
 atlas = ExtResource("2_7u87c")
 region = Rect2(0, 224, 32, 32)
@@ -207,10 +206,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xoqqc"]
-size = Vector2(123, 125)
+size = Vector2(16, 32)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
-collision_mask = 0
+collision_mask = 8
 motion_mode = 1
 script = ExtResource("1_hya73")
 
@@ -220,10 +219,9 @@ animation = &"walk_front"
 autoplay = "walk_front"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 0.5)
 shape = SubResource("RectangleShape2D_xoqqc")
 
 [node name="WeaponHolder" type="Node2D" parent="."]
 
 [node name="Weapon" parent="WeaponHolder" instance=ExtResource("3_kiq52")]
-position = Vector2(77, 0)
+position = Vector2(24, 0)

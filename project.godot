@@ -28,6 +28,7 @@ window/vsync/vsync_mode=0
 folder_colors={
 "res://assets/": "red",
 "res://assets/sprites/": "red",
+"res://customs/": "blue",
 "res://globals/": "purple",
 "res://scenes/": "green"
 }
@@ -85,3 +86,4 @@ common/physics_interpolation=true
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)

@@ -1,0 +1,58 @@
+[gd_scene load_steps=4 format=3 uid="uid://2xrbd7m4kls2"]
+
+[ext_resource type="PackedScene" uid="uid://dn5spyqikuik2" path="res://scenes/door/door.tscn" id="1_41xbf"]
+[ext_resource type="Texture2D" uid="uid://d0jfskfgad8wc" path="res://icon.svg" id="1_65q2s"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_bxwo2"]
+
+[node name="Room" type="Node2D"]
+
+[node name="UpperWall" type="StaticBody2D" parent="."]
+position = Vector2(0, -480)
+rotation = 3.14159
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UpperWall"]
+shape = SubResource("WorldBoundaryShape2D_bxwo2")
+
+[node name="RightWall" type="StaticBody2D" parent="."]
+position = Vector2(416, -288)
+rotation = -1.5708
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall"]
+shape = SubResource("WorldBoundaryShape2D_bxwo2")
+
+[node name="LowerWall" type="StaticBody2D" parent="."]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LowerWall"]
+shape = SubResource("WorldBoundaryShape2D_bxwo2")
+
+[node name="LeftWall" type="StaticBody2D" parent="."]
+position = Vector2(-416, -288)
+rotation = 1.5708
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall"]
+shape = SubResource("WorldBoundaryShape2D_bxwo2")
+
+[node name="Door" parent="." instance=ExtResource("1_41xbf")]
+position = Vector2(0, -16)
+
+[node name="BG" type="CanvasLayer" parent="."]
+layer = -1
+follow_viewport_enabled = true
+
+[node name="Floor" type="Sprite2D" parent="BG"]
+modulate = Color(0.313726, 0.109804, 0.0666667, 0.623529)
+texture_repeat = 2
+position = Vector2(-3.05176e-05, -240)
+scale = Vector2(0.416, 0.48)
+texture = ExtResource("1_65q2s")
+region_enabled = true
+region_rect = Rect2(0, 0, 2000, 1000)

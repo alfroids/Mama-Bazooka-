@@ -30,5 +30,5 @@ func _on_stun_timer_timeout() -> void:
 	is_stunned = false
 
 
-func _on_child_died() -> void:
+func _on_child_fainted() -> void:
 	speed *= 2

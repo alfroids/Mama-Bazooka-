@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://d0jfskfgad8wc" path="res://icon.svg" id="1_x602s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_btas8"]
-size = Vector2(100, 50)
+size = Vector2(32, 32)
 
 [node name="Weapon" type="Area2D"]
 collision_layer = 0
@@ -12,8 +12,8 @@ collision_mask = 6
 script = ExtResource("1_prgte")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.125, 0.125)
 texture = ExtResource("1_x602s")
-region_enabled = true
 region_rect = Rect2(0, 0, 100, 50)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

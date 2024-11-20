@@ -1,1 +1,12 @@
+res://scenes/room/room.tscn
+res://customs/interactable.gd
+res://scenes/door/door.tscn
+res://scenes/door/door.gd
 res://scenes/main/main.tscn
+res://scenes/child/child.gd
+res://scenes/mother/mother.tscn
+res://scenes/mother/mother.gd
+res://scenes/main/main.gd
+res://scenes/child/child.tscn
+res://scenes/player/player.tscn
+res://scenes/weapon/weapon.tscn

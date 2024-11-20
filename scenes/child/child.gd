@@ -2,6 +2,8 @@ class_name Child
 extends CharacterBody2D
 
 
+signal fainted()
+
 @export var speed: float = 300.0
 @export var acceleration: float = 900.0
 @export var threshold: float = 0.9
@@ -26,7 +28,8 @@ func _physics_process(delta: float) -> void:
 		velocity = velocity.move_toward(speed * (-player_dir), delta * acceleration)
 	else:
 		($ChildSprite as AnimatedSprite2D).modulate = Color.RED
-		velocity = velocity.move_toward(speed * mother_dir, delta * acceleration)
+		var dir: Vector2 = (mother_dir - player_dir).normalized()
+		velocity = velocity.move_toward(speed * dir, delta * acceleration)
 
 	move_and_slide()
 
@@ -34,5 +37,5 @@ func _physics_process(delta: float) -> void:
 func hit() -> void:
 	hp -= 1
 	if hp <= 0:
-		mother._on_child_died()
+		fainted.emit()
 		queue_free()

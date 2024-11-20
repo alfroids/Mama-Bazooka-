@@ -3,7 +3,6 @@
 [ext_resource type="Script" path="res://scenes/child/child.gd" id="1_18v1x"]
 [ext_resource type="Texture2D" uid="uid://sjn1yx5kmbwr" path="res://assets/sprites/enemies/pizza_jam_kid.png" id="2_84dyd"]
 
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_6xo5o"]
 atlas = ExtResource("2_84dyd")
 region = Rect2(0, 64, 32, 32)
@@ -93,11 +92,11 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5w8hw"]
-size = Vector2(124, 128)
+size = Vector2(16, 32)
 
 [node name="Child" type="CharacterBody2D"]
 collision_layer = 2
-collision_mask = 0
+collision_mask = 8
 motion_mode = 1
 script = ExtResource("1_18v1x")
 
@@ -107,5 +106,4 @@ animation = &"walk_front"
 autoplay = "walk_front"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_5w8hw")
