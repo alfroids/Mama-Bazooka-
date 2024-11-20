@@ -67,3 +67,10 @@ scale = Vector2(0.416, 0.48)
 texture = ExtResource("1_65q2s")
 region_enabled = true
 region_rect = Rect2(0, 0, 2000, 1000)
+
+[node name="HordeTimer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="HordeTimer" to="." method="_on_horde_timer_timeout"]

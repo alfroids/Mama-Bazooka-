@@ -36,3 +36,11 @@ func _ready() -> void:
 
 	child.fainted.connect(mother._on_child_fainted)
 	child.fainted.connect(door._on_child_fainted)
+
+
+func _on_horde_timer_timeout() -> void:
+	for _i in range(Manager.horde_size):
+		var m: Mother = mother_scene.instantiate() as Mother
+		m.global_position = player_spawn.global_position
+		add_child(m)
+		await get_tree().create_timer(0.2).timeout
