@@ -15,7 +15,7 @@ func _physics_process(delta: float) -> void:
 		velocity = velocity.move_toward(speed * input, 2 * delta * acceleration)
 	else:
 		velocity = velocity.move_toward(speed * input, delta * acceleration)
-	
+
 	if input == Vector2.DOWN:
 		animated_sprite.animation = "walk_front"
 	if input == Vector2.LEFT:
