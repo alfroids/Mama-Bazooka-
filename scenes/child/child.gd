@@ -6,10 +6,11 @@ signal fainted()
 
 @export var speed: float = 300.0
 @export var acceleration: float = 900.0
-@export var threshold: float = 0.9
+@export var threshold: float = 0.98
 @export var sprite: AnimatedSprite2D
 
 var mother: Mother
+var is_fainted: bool = false
 
 @onready var player: Player = get_tree().get_first_node_in_group(&"player") as Player
 @onready var anchor: Node2D = $Anchor as Node2D
@@ -17,6 +18,9 @@ var mother: Mother
 
 
 func _physics_process(delta: float) -> void:
+	if is_fainted:
+		return
+
 	var canvas: Transform2D = get_canvas_transform()
 	var top_left: Vector2 = -canvas.origin / canvas.get_scale()
 	var size: Vector2 = get_viewport_rect().size / canvas.get_scale()
@@ -42,13 +46,13 @@ func _physics_process(delta: float) -> void:
 	if mother:
 		mother_dir = global_position.direction_to(mother.global_position)
 
+	var dir: Vector2
 	if player_dir.dot(mother_dir) >= threshold:
-		($ChildSprite as AnimatedSprite2D).modulate = Color.WHITE
-		velocity = velocity.move_toward(speed * (-player_dir), delta * acceleration)
+		dir = (-player_dir)
 	else:
-		($ChildSprite as AnimatedSprite2D).modulate = Color.RED
-		var dir: Vector2 = (mother_dir - player_dir).normalized()
-		velocity = velocity.move_toward(speed * dir, delta * acceleration)
+		dir = (mother_dir - player_dir).normalized()
+	dir = dir.rotated(randf_range(-PI / 2, PI / 2))
+	velocity = velocity.move_toward(speed * dir, delta * acceleration)
 
 	move_and_slide()
 
@@ -56,8 +60,10 @@ func _physics_process(delta: float) -> void:
 func hit() -> void:
 	hp -= 1
 	if hp <= 0:
+		is_fainted = true
 		fainted.emit()
-		queue_free()
+		sprite.play(&"fainted")
+		anchor.visible = false
 	else:
 		sprite.rotation = 3 * PI / 4
 		var tween: Tween = create_tween()

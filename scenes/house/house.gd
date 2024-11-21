@@ -17,7 +17,7 @@ var child: Child
 
 func _ready() -> void:
 	Music.playing = true
-	
+
 	player = player_scene.instantiate() as Player
 	player.global_position = player_spawn.global_position
 	add_child(player)
