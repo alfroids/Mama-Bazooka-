@@ -18,7 +18,6 @@ func _unhandled_input(event: InputEvent) -> void:
 		flipflop_sound.play()
 
 
-
 func _on_body_entered(body: Node2D) -> void:
 	if body is Child:
 		(body as Child).hit()

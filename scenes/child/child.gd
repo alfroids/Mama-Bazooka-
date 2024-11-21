@@ -12,6 +12,14 @@ signal fainted()
 var mother: Mother
 var is_fainted: bool = false
 
+var hit_sounds = {
+	"hit_1" = preload("res://assets/sounds/sfx/hurt/9.wav"),
+	"hit_2" = preload("res://assets/sounds/sfx/hurt/11.wav"),
+	"hit_3" = preload("res://assets/sounds/sfx/hurt/12.wav"),
+	"hit_4" = preload("res://assets/sounds/sfx/hurt/13.wav")
+	}
+
+@onready var hit_sound: AudioStreamPlayer2D = $AudioStreamPlayer2D as AudioStreamPlayer2D
 @onready var player: Player = get_tree().get_first_node_in_group(&"player") as Player
 @onready var anchor: Node2D = $Anchor as Node2D
 @onready var hp: int = 3
@@ -73,3 +81,8 @@ func hit() -> void:
 			0,
 			0.25,
 		).set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
+		
+		var hit_size = hit_sounds.size()
+		var random_hit = hit_sounds.keys()[randi() % hit_size]
+		hit_sound.stream = hit_sounds[random_hit]
+		hit_sound.play()
