@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://doj383her7tl4"]
+[gd_scene load_steps=11 format=3 uid="uid://doj383her7tl4"]
 
 [ext_resource type="Script" path="res://scenes/flip_flop/flip_flop.gd" id="1_55av8"]
 [ext_resource type="Texture2D" uid="uid://dckipshsa2jrl" path="res://assets/sprites/weapons/pizza_jam_flipflop.png" id="1_y25qc"]
+[ext_resource type="AudioStream" uid="uid://v880hfmq17g1" path="res://assets/sounds/sfx/thwack-09.wav" id="3_nqjiw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4lyvi"]
 atlas = ExtResource("1_y25qc")
@@ -69,6 +70,9 @@ one_shot = true
 [node name="ActiveTimer" type="Timer" parent="."]
 wait_time = 0.1
 one_shot = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_nqjiw")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="ActiveTimer" to="." method="_on_active_timer_timeout"]
