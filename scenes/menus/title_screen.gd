@@ -3,7 +3,7 @@ extends Control
 
 
 func _on_start_pressed():
-	get_tree().change_scene_to_file("res://scenes/house/house.tscn")
+	get_tree().change_scene_to_file("res://scenes/cutscenes/intro_scene.tscn")
 
 
 func _on_credits_pressed():
