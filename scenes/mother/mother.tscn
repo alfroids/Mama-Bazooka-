@@ -172,7 +172,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m37a2"]
-size = Vector2(16, 32)
+size = Vector2(16, 26)
 
 [sub_resource type="Animation" id="Animation_lmtui"]
 length = 0.001
@@ -234,4 +234,13 @@ libraries = {
 "": SubResource("AnimationLibrary_vochu")
 }
 
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_postprocessing = 1
+debug_enabled = true
+
+[node name="NavUpdateTimer" type="Timer" parent="."]
+wait_time = 0.2
+autostart = true
+
 [connection signal="timeout" from="StunTimer" to="." method="_on_stun_timer_timeout"]
+[connection signal="timeout" from="NavUpdateTimer" to="." method="_on_nav_update_timer_timeout"]
