@@ -7,6 +7,7 @@ extends Control
 
 
 func _ready() -> void:
+	Level.horde_size = 0
 	AudioController.play_titlescreen_song()
 	animation_player.play(&"revealing_info")
 

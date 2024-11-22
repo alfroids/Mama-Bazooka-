@@ -1,3 +1,4 @@
+class_name Level
 extends Node2D
 
 
@@ -47,7 +48,7 @@ func _ready() -> void:
 
 
 func _on_defeat_timer_timeout() -> void:
-	pass # Replace with function body.
+	defeat_screen.enable()
 
 
 func _on_horde_timer_timeout() -> void:
@@ -63,6 +64,7 @@ func _on_horde_timer_timeout() -> void:
 func _on_child_fainted() -> void:
 	is_level_over = true
 	horde_size += 1
+	defeat_timer.stop()
 
 
 func _unhandled_input(event: InputEvent) -> void:
