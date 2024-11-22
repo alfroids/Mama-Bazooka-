@@ -36,7 +36,7 @@ open_doors = NodePath("../OpenDoors")
 position = Vector2(16, -144)
 
 [node name="ChildSpawn" type="Marker2D" parent="."]
-position = Vector2(116, -80)
+position = Vector2(238.5, -59)
 
 [node name="MotherSpawn" type="Marker2D" parent="."]
-position = Vector2(-128, -80)
+position = Vector2(95.5, -75)

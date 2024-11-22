@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dbr6xl6doimet"]
+[gd_scene load_steps=14 format=3 uid="uid://dbr6xl6doimet"]
 
 [ext_resource type="Script" path="res://scenes/level/level.gd" id="1_ips7j"]
 [ext_resource type="PackedScene" uid="uid://bfxp3a4g5esn8" path="res://scenes/houses/house.tscn" id="2_mxujt"]
@@ -10,11 +10,13 @@
 [ext_resource type="PackedScene" uid="uid://relav1ltlgos" path="res://scenes/houses/house_4.tscn" id="5_cok7q"]
 [ext_resource type="PackedScene" uid="uid://bdwycipbwnmda" path="res://scenes/menus/pause_menu.tscn" id="6_l87us"]
 [ext_resource type="PackedScene" uid="uid://sd2yt7646qle" path="res://scenes/houses/house_5.tscn" id="6_ooebn"]
+[ext_resource type="PackedScene" uid="uid://vco5pnjw4ni7" path="res://scenes/houses/house_6.tscn" id="7_3gn3q"]
 [ext_resource type="PackedScene" uid="uid://dfkgnnn12no7" path="res://scenes/menus/defeat_screen.tscn" id="7_gt0ch"]
+[ext_resource type="PackedScene" uid="uid://crg87mehq0dl7" path="res://scenes/houses/house_7.tscn" id="8_habyh"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_ips7j")
-house_scenes = Array[PackedScene]([ExtResource("2_mxujt"), ExtResource("3_fhh6g"), ExtResource("4_qax5o"), ExtResource("5_cok7q"), ExtResource("6_ooebn")])
+house_scenes = Array[PackedScene]([ExtResource("2_mxujt"), ExtResource("3_fhh6g"), ExtResource("4_qax5o"), ExtResource("5_cok7q"), ExtResource("6_ooebn"), ExtResource("7_3gn3q"), ExtResource("8_habyh")])
 player_scene = ExtResource("3_q0yef")
 child_scene = ExtResource("4_siesw")
 mother_scene = ExtResource("5_1ghes")
