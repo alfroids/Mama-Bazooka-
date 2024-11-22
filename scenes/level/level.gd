@@ -7,7 +7,7 @@ extends Node2D
 @export var child_scene: PackedScene
 @export var mother_scene: PackedScene
 
-static var horde_size: int = 0
+static var horde_size: int = 5
 
 var house: House
 var player: Player
@@ -38,15 +38,16 @@ func _ready() -> void:
 	camera.zoom = 2 * Vector2.ONE
 	player.add_child(camera)
 
-	child = child_scene.instantiate() as Child
-	child.global_position = house.child_spawn.global_position
-	add_child(child)
-
 	mother = mother_scene.instantiate() as Mother
 	mother.global_position = house.mother_spawn.global_position
 	add_child(mother)
 
 	SignalBus.child_fainted.connect(mother._on_child_fainted)
+
+	child = child_scene.instantiate() as Child
+	child.global_position = house.child_spawn.global_position
+	child.mother = mother
+	add_child(child)
 
 
 func _on_defeat_timer_timeout() -> void:

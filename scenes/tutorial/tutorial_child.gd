@@ -1,24 +1,9 @@
 extends Child
 
 
-func _physics_process(delta: float) -> void:
-	if is_fainted:
-		return
-
-	set_offscreen_indicator()
-
-	if hp == 3:
-		return
-
-	var player_dir: Vector2
-	if player:
-		player_dir = global_position.direction_to(player.global_position)
-
-		if player_dir.y > 0:
-			sprite.animation = "walk_back"
-		if player_dir.y < 0:
-			sprite.animation = "walk_front"
-
-	velocity = velocity.move_toward(speed * (-player_dir), delta * acceleration)
-
-	move_and_slide()
+func _on_nav_update_timer_timeout() -> void:
+	if hp < 3 and player:
+		var player_dir: Vector2 = global_position.direction_to(player.global_position)
+		var target: Vector2 = global_position - 256 * player_dir
+		var noise: Vector2 = 32 * Vector2.RIGHT.rotated(TAU * randf())
+		nav_agent.target_position = target + noise

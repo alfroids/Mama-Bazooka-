@@ -173,7 +173,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xoqqc"]
-size = Vector2(16, 32)
+size = Vector2(16, 26)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_mask = 8

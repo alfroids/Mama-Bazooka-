@@ -28,14 +28,10 @@ func _physics_process(delta: float) -> void:
 	if is_grabbing_player:
 		pass
 
-	elif player:
-		var next_pos: Vector2 = nav_agent.get_next_path_position()
-		var dir: Vector2 = global_position.direction_to(next_pos)
-		velocity = velocity.move_toward(speed * dir, delta * acceleration)
-		#var player_dir: Vector2 = global_position.direction_to(player.global_position)
-		#var dir: Vector2 = player_dir.rotated(randf_range(-PI / 3, PI / 3))
-		#velocity = velocity.move_toward(speed * dir, delta * acceleration)
-#
+	var next_pos: Vector2 = nav_agent.get_next_path_position()
+	var dir: Vector2 = global_position.direction_to(next_pos)
+	velocity = velocity.move_toward(speed * dir, delta * acceleration)
+
 	if velocity.y > 0:
 		if is_furious:
 			sprite.play(&"fury_walk")
@@ -63,5 +59,6 @@ func _on_child_fainted() -> void:
 
 
 func _on_nav_update_timer_timeout() -> void:
-	var noise: Vector2 = 32 * Vector2.RIGHT.rotated(TAU * randf())
-	nav_agent.target_position = player.global_position
+	if player:
+		var noise: Vector2 = 32 * Vector2.RIGHT.rotated(TAU * randf())
+		nav_agent.target_position = player.global_position + noise

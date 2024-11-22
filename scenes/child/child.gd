@@ -21,7 +21,7 @@ var hit_sfx: Array[AudioStream] = [
 @onready var hp: int = 3
 @onready var player: Player = get_tree().get_first_node_in_group(&"player") as Player
 @onready var anchor: Node2D = $Anchor as Node2D
-@onready var ray_cast_2d: RayCast2D = $RayCast2D as RayCast2D
+@onready var nav_agent: NavigationAgent2D = $NavigationAgent2D as NavigationAgent2D
 
 
 func _physics_process(delta: float) -> void:
@@ -30,28 +30,36 @@ func _physics_process(delta: float) -> void:
 
 	set_offscreen_indicator()
 
-	var player_dir: Vector2
-	if player:
-		player_dir = global_position.direction_to(player.global_position)
+	#var player_dir: Vector2
+	#if player:
+		#player_dir = global_position.direction_to(player.global_position)
+#
+		#if player_dir.y > 0:
+			#sprite.animation = "walk_back"
+		#if player_dir.y < 0:
+			#sprite.animation = "walk_front"
+#
+	#var mother_dir: Vector2
+	#if mother:
+		#mother_dir = global_position.direction_to(mother.global_position)
+#
+	#var dir: Vector2
+	#if player_dir.dot(mother_dir) >= threshold:
+		#dir = (-player_dir)
+	#else:
+		#dir = (mother_dir - player_dir).normalized()
+	#dir = dir.rotated(randf_range(-PI / 2, PI / 2))
+	#velocity = velocity.move_toward(speed * dir, delta * acceleration)
 
-		if player_dir.y > 0:
-			sprite.animation = "walk_back"
-		if player_dir.y < 0:
-			sprite.animation = "walk_front"
-
-	var mother_dir: Vector2
-	if mother:
-		mother_dir = global_position.direction_to(mother.global_position)
-
-	var dir: Vector2
-	if player_dir.dot(mother_dir) >= threshold:
-		dir = (-player_dir)
-	else:
-		dir = (mother_dir - player_dir).normalized()
-	dir = dir.rotated(randf_range(-PI / 2, PI / 2))
+	var next_pos: Vector2 = nav_agent.get_next_path_position()
+	var dir: Vector2 = global_position.direction_to(next_pos)
 	velocity = velocity.move_toward(speed * dir, delta * acceleration)
 
-	ray_cast_2d.rotation = Vector2.RIGHT.angle_to(velocity)
+	if velocity.y > 0:
+		sprite.animation = "walk_back"
+	if velocity.y < 0:
+		sprite.animation = "walk_front"
+
 	move_and_slide()
 
 
@@ -91,3 +99,23 @@ func hit() -> void:
 		#hit_sound.stream = hit_sounds[random_hit]
 		#hit_sound.play()
 		SFXController.play_sfx(hit_sfx.pick_random())
+
+
+func _on_nav_update_timer_timeout() -> void:
+	if player:
+		var dir: Vector2 = -global_position.direction_to(player.global_position)
+		if mother:
+			dir += global_position.direction_to(mother.global_position)
+			dir = dir.normalized()
+			#var player_sqdist: float = global_position.distance_squared_to(player.global_position)
+			#var mother_sqdist: float = global_position.distance_squared_to(mother.global_position)
+			#if player_sqdist > mother_sqdist:
+				#dir = global_position.direction_to(mother.global_position)
+				#sprite.modulate = Color.RED
+			#else:
+				#dir += global_position.direction_to(mother.global_position)
+				#dir = dir.normalized()
+				#sprite.modulate = Color.WHITE
+		var target: Vector2 = global_position + 256 * dir
+		var noise: Vector2 = 32 * Vector2.RIGHT.rotated(TAU * randf())
+		nav_agent.target_position = target + noise
