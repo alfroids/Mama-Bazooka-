@@ -211,6 +211,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vx4wm")
+tutorial = "res://scenes/tutorial/tutorial.tscn"
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 2

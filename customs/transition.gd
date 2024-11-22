@@ -2,7 +2,7 @@ class_name Transition
 extends Control
 
 
-@export_file("*.tscn") var next_scene
+@export_file("*.tscn") var next_scene: String
 
 
 func transition() -> void:

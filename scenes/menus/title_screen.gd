@@ -1,7 +1,7 @@
 extends Control
 
 
-const TUTORIAL: String = "res://scenes/tutorial/tutorial.tscn"
+@export_file("*.tscn") var tutorial: String
 
 
 func _ready() -> void:
@@ -9,7 +9,7 @@ func _ready() -> void:
 
 
 func _on_start_pressed():
-	get_tree().change_scene_to_file(TUTORIAL)
+	get_tree().change_scene_to_file(tutorial)
 
 
 func _on_credits_pressed():
