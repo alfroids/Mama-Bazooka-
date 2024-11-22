@@ -5,13 +5,15 @@ extends CharacterBody2D
 @export var speed: float = 250.0
 @export var acceleration: float = 1200.0
 
-var is_furious: bool = false
-
-@onready var player: CharacterBody2D = get_tree().get_first_node_in_group(&"player") as CharacterBody2D
+@onready var player: Player = get_tree().get_first_node_in_group(&"player") as Player
+@onready var door: Door = get_tree().get_first_node_in_group(&"door") as Door
 @onready var is_stunned: bool = false
+@onready var is_furious: bool = false
+@onready var is_grabbing_player: bool = false
 @onready var stun_timer: Timer = $StunTimer as Timer
 @onready var sprite: AnimatedSprite2D = $MotherSprite as AnimatedSprite2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer as AnimationPlayer
+@onready var nav_agent: NavigationAgent2D = $NavigationAgent2D as NavigationAgent2D
 
 
 func _ready() -> void:
@@ -23,18 +25,24 @@ func _physics_process(delta: float) -> void:
 	if is_stunned:
 		return
 
-	if player:
-		var player_dir: Vector2 = global_position.direction_to(player.global_position)
-		var dir: Vector2 = player_dir.rotated(randf_range(-PI / 3, PI / 3))
-		velocity = velocity.move_toward(speed * dir, delta * acceleration)
+	if is_grabbing_player:
+		pass
 
-		if player_dir.y > 0:
-			if is_furious:
-				sprite.play(&"fury_walk")
-			else:
-				sprite.play(&"walk_front")
-		if player_dir.y < 0:
-			sprite.play(&"walk_back")
+	elif player:
+		var next_pos: Vector2 = nav_agent.get_next_path_position()
+		var dir: Vector2 = global_position.direction_to(next_pos)
+		velocity = velocity.move_toward(speed * dir, delta * acceleration)
+		#var player_dir: Vector2 = global_position.direction_to(player.global_position)
+		#var dir: Vector2 = player_dir.rotated(randf_range(-PI / 3, PI / 3))
+		#velocity = velocity.move_toward(speed * dir, delta * acceleration)
+#
+	if velocity.y > 0:
+		if is_furious:
+			sprite.play(&"fury_walk")
+		else:
+			sprite.play(&"walk_front")
+	elif velocity.y < 0:
+		sprite.play(&"walk_back")
 
 	move_and_slide()
 
@@ -52,3 +60,8 @@ func _on_child_fainted() -> void:
 	is_furious = true
 	speed *= 2
 	animation_player.speed_scale *= 2
+
+
+func _on_nav_update_timer_timeout() -> void:
+	var noise: Vector2 = 32 * Vector2.RIGHT.rotated(TAU * randf())
+	nav_agent.target_position = player.global_position

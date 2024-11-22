@@ -21,6 +21,7 @@ var hit_sfx: Array[AudioStream] = [
 @onready var hp: int = 3
 @onready var player: Player = get_tree().get_first_node_in_group(&"player") as Player
 @onready var anchor: Node2D = $Anchor as Node2D
+@onready var ray_cast_2d: RayCast2D = $RayCast2D as RayCast2D
 
 
 func _physics_process(delta: float) -> void:
@@ -50,6 +51,7 @@ func _physics_process(delta: float) -> void:
 	dir = dir.rotated(randf_range(-PI / 2, PI / 2))
 	velocity = velocity.move_toward(speed * dir, delta * acceleration)
 
+	ray_cast_2d.rotation = Vector2.RIGHT.angle_to(velocity)
 	move_and_slide()
 
 

@@ -46,6 +46,8 @@ func _ready() -> void:
 	mother.global_position = house.mother_spawn.global_position
 	add_child(mother)
 
+	SignalBus.child_fainted.connect(mother._on_child_fainted)
+
 
 func _on_defeat_timer_timeout() -> void:
 	defeat_screen.enable()

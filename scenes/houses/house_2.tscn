@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=4 uid="uid://b8g261nyvy245"]
+[gd_scene load_steps=4 format=4 uid="uid://dm72m3pdpfn44"]
 
 [ext_resource type="Script" path="res://scenes/houses/house.gd" id="1_qod4d"]
 [ext_resource type="TileSet" uid="uid://bu0nl7hg8gawk" path="res://scenes/houses/house_tileset.tres" id="2_2s1gk"]
