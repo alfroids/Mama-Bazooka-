@@ -7,7 +7,7 @@ extends Node2D
 @export var child_scene: PackedScene
 @export var mother_scene: PackedScene
 
-static var horde_size: int = 5
+static var horde_size: int = 0
 
 var house: House
 var player: Player

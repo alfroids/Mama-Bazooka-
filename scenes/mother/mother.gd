@@ -25,8 +25,8 @@ func _physics_process(delta: float) -> void:
 	if is_stunned:
 		return
 
-	if is_grabbing_player:
-		pass
+	if not is_grabbing_player and global_position.distance_squared_to(player.global_position) < 400:
+		grab_player()
 
 	var next_pos: Vector2 = nav_agent.get_next_path_position()
 	var dir: Vector2 = global_position.direction_to(next_pos)
@@ -46,6 +46,20 @@ func _physics_process(delta: float) -> void:
 func hit() -> void:
 	is_stunned = true
 	stun_timer.start()
+	release_player()
+
+
+func grab_player() -> void:
+	is_grabbing_player = true
+	speed /= 2
+	player.grab(self)
+
+
+func release_player() -> void:
+	if is_grabbing_player:
+		is_grabbing_player = false
+		speed *= 2
+		player.release()
 
 
 func _on_stun_timer_timeout() -> void:
@@ -59,6 +73,8 @@ func _on_child_fainted() -> void:
 
 
 func _on_nav_update_timer_timeout() -> void:
-	if player:
+	if is_grabbing_player:
+		nav_agent.target_position = door.global_position
+	elif player:
 		var noise: Vector2 = 32 * Vector2.RIGHT.rotated(TAU * randf())
 		nav_agent.target_position = player.global_position + noise

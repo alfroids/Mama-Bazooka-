@@ -5,10 +5,15 @@ extends CharacterBody2D
 @export var speed: float = 400.0
 @export var acceleration: float = 1600.0
 
+@onready var grabbed_by: Mother
 @onready var weapon_holder: Node2D = $WeaponHolder as Node2D
 @onready var animated_sprite: AnimatedSprite2D = $PlayerSprite as AnimatedSprite2D
 
 func _physics_process(delta: float) -> void:
+	if grabbed_by:
+		global_position = grabbed_by.global_position
+		return
+
 	var input: Vector2 = Input.get_vector(&"move_left", &"move_right", &"move_up", &"move_down")
 
 	if input.dot(velocity.normalized()) < 0:
@@ -34,3 +39,14 @@ func _process(_delta: float) -> void:
 	var mouse_pos: Vector2 = get_global_mouse_position()
 	#weapon_holder.rotation = global_position.angle_to_point(mouse_pos)
 	weapon_holder.look_at(mouse_pos)
+
+
+func grab(mother: Mother) -> void:
+	if grabbed_by:
+		grabbed_by.release_player()
+
+	grabbed_by = mother
+
+
+func release() -> void:
+	grabbed_by = null
