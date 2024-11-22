@@ -16,6 +16,7 @@ tile_map_data = PackedByteArray("AAAAAPX/AAAIAA4AAAABAPX/AAAKAA4AAAACAPX/AAAEAAw
 tile_set = ExtResource("2_lm8m0")
 
 [node name="OpenDoors" type="TileMapLayer" parent="."]
+visible = false
 tile_map_data = PackedByteArray("AAAAAPX/AAAMAA4AAAABAPX/AAAOAA4AAAA=")
 tile_set = ExtResource("2_lm8m0")
 

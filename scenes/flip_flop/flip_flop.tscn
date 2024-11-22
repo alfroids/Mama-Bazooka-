@@ -65,6 +65,7 @@ shape = SubResource("CircleShape2D_mqce0")
 disabled = true
 
 [node name="ReloadTimer" type="Timer" parent="."]
+wait_time = 0.5
 one_shot = true
 
 [node name="ActiveTimer" type="Timer" parent="."]
