@@ -17,7 +17,7 @@ tile_set = ExtResource("2_2s1gk")
 
 [node name="OpenDoors" type="TileMapLayer" parent="."]
 visible = false
-tile_map_data = PackedByteArray("AAAAAPX/AAAMABAAAAABAPX/AAAOABAAAAA=")
+tile_map_data = PackedByteArray("AAAAAPX/AAAMAA4AAAABAPX/AAAOAA4AAAA=")
 tile_set = ExtResource("2_2s1gk")
 
 [node name="DecorationsBottom" type="TileMapLayer" parent="."]
