@@ -99,6 +99,7 @@ collision_layer = 2
 collision_mask = 8
 motion_mode = 1
 script = ExtResource("1_q5171")
+hp = 4
 sprite = NodePath("ChildSprite")
 
 [node name="ChildSprite" type="AnimatedSprite2D" parent="."]

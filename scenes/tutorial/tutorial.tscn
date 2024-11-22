@@ -1,24 +1,24 @@
 [gd_scene load_steps=5 format=3 uid="uid://bvbottqofkjj3"]
 
-[ext_resource type="PackedScene" uid="uid://2xrbd7m4kls2" path="res://scenes/house/house.tscn" id="1_05uwd"]
 [ext_resource type="Script" path="res://scenes/tutorial/tutorial.gd" id="1_mn2bu"]
+[ext_resource type="PackedScene" uid="uid://bfxp3a4g5esn8" path="res://scenes/new_house/house.tscn" id="2_84k4s"]
 [ext_resource type="PackedScene" uid="uid://cllgnoyqonuhs" path="res://scenes/player/player.tscn" id="2_ot471"]
 [ext_resource type="PackedScene" uid="uid://0brj4rscmc1b" path="res://scenes/tutorial/tutorial_child.tscn" id="3_sfnoy"]
 
 [node name="Tutorial" type="Node2D"]
 script = ExtResource("1_mn2bu")
 
-[node name="Room" parent="." instance=ExtResource("1_05uwd")]
+[node name="House" parent="." instance=ExtResource("2_84k4s")]
 
 [node name="Player" parent="." instance=ExtResource("2_ot471")]
-position = Vector2(-253, -238)
+position = Vector2(224, -147)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(2, 2)
 process_callback = 0
 
 [node name="TutorialChild" parent="." instance=ExtResource("3_sfnoy")]
-position = Vector2(192, -298)
+position = Vector2(-224, -164)
 
 [node name="EasterEggTimer" type="Timer" parent="."]
 wait_time = 300.0

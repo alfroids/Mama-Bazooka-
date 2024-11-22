@@ -1,6 +1,10 @@
 extends Child
 
+
 func _physics_process(delta: float) -> void:
+	if hp > 3:
+		return
+
 	var player_dir: Vector2
 	if player:
 		player_dir = global_position.direction_to(player.global_position)

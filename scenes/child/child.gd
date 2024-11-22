@@ -7,6 +7,7 @@ signal fainted()
 @export var speed: float = 300.0
 @export var acceleration: float = 900.0
 @export var threshold: float = 0.98
+@export var hp: int = 3
 @export var sprite: AnimatedSprite2D
 
 var mother: Mother
@@ -22,7 +23,6 @@ var hit_sounds = {
 @onready var hit_sound: AudioStreamPlayer2D = $AudioStreamPlayer2D as AudioStreamPlayer2D
 @onready var player: Player = get_tree().get_first_node_in_group(&"player") as Player
 @onready var anchor: Node2D = $Anchor as Node2D
-@onready var hp: int = 3
 
 
 func _physics_process(delta: float) -> void:
@@ -81,7 +81,7 @@ func hit() -> void:
 			0,
 			0.25,
 		).set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
-		
+
 		var hit_size = hit_sounds.size()
 		var random_hit = hit_sounds.keys()[randi() % hit_size]
 		hit_sound.stream = hit_sounds[random_hit]
