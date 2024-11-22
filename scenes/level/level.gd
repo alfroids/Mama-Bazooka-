@@ -16,6 +16,8 @@ var mother: Mother
 @onready var is_level_over: bool = false
 @onready var defeat_timer: Timer = $DefeatTimer as Timer
 @onready var horde_timer: Timer = $HordeTimer as Timer
+@onready var pause_menu: Control = $Menus/PauseMenu as Control
+@onready var defeat_screen: Control = $Menus/DefeatScreen as Control
 
 
 func _ready() -> void:
@@ -61,3 +63,8 @@ func _on_horde_timer_timeout() -> void:
 func _on_child_fainted() -> void:
 	is_level_over = true
 	horde_size += 1
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed(&"pause"):
+		pause_menu.enable()

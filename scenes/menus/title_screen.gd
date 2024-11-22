@@ -3,9 +3,12 @@ extends Control
 
 @export_file("*.tscn") var tutorial: String
 
+@onready var animation_player: AnimationPlayer = $AnimationPlayer as AnimationPlayer
+
 
 func _ready() -> void:
 	AudioController.play_titlescreen_song()
+	animation_player.play(&"revealing_info")
 
 
 func _on_start_pressed():

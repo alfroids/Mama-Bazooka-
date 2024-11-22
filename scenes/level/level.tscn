@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://dbr6xl6doimet"]
+[gd_scene load_steps=8 format=3 uid="uid://dbr6xl6doimet"]
 
 [ext_resource type="Script" path="res://scenes/level/level.gd" id="1_ips7j"]
 [ext_resource type="PackedScene" uid="uid://bfxp3a4g5esn8" path="res://scenes/houses/house.tscn" id="2_mxujt"]
 [ext_resource type="PackedScene" uid="uid://cllgnoyqonuhs" path="res://scenes/player/player.tscn" id="3_q0yef"]
 [ext_resource type="PackedScene" uid="uid://dk3uk82jpnnu8" path="res://scenes/child/child.tscn" id="4_siesw"]
 [ext_resource type="PackedScene" uid="uid://d0fe468t2pbld" path="res://scenes/mother/mother.tscn" id="5_1ghes"]
+[ext_resource type="PackedScene" uid="uid://bdwycipbwnmda" path="res://scenes/menus/pause_menu.tscn" id="6_l87us"]
+[ext_resource type="PackedScene" uid="uid://dfkgnnn12no7" path="res://scenes/menus/defeat_screen.tscn" id="7_gt0ch"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_ips7j")
@@ -22,6 +24,14 @@ autostart = true
 wait_time = 5.0
 one_shot = true
 autostart = true
+
+[node name="Menus" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="Menus" instance=ExtResource("6_l87us")]
+visible = false
+
+[node name="DefeatScreen" parent="Menus" instance=ExtResource("7_gt0ch")]
+visible = false
 
 [connection signal="timeout" from="DefeatTimer" to="." method="_on_defeat_timer_timeout"]
 [connection signal="timeout" from="HordeTimer" to="." method="_on_horde_timer_timeout"]
