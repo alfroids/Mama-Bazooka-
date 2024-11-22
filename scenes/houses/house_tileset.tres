@@ -118,6 +118,18 @@ texture = ExtResource("1_kdcpn")
 12:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 14:16/0 = 0
 14:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:10/0 = 0
+8:10/0 = 0
+6:8/0 = 0
+8:8/0 = 0
+10:8/0 = 0
+12:8/0 = 0
+12:10/0 = 0
+10:10/0 = 0
+2:0/0 = 0
+1:0/0 = 0
+9:8/0 = 0
+9:10/0 = 0
 
 [resource]
 physics_layer_0/collision_layer = 8
