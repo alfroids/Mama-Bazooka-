@@ -18,7 +18,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 Manager="*res://globals/manager.gd"
-Music="*res://globals/music.tscn"
+Music="res://globals/music.tscn"
+AudioController="*res://globals/audio_controller.gd"
 
 [display]
 

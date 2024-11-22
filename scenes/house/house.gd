@@ -16,7 +16,8 @@ var child: Child
 
 
 func _ready() -> void:
-	Music.playing = true
+	#Music.playing = true
+	AudioController.play_main_song()
 
 	player = player_scene.instantiate() as Player
 	player.global_position = player_spawn.global_position
