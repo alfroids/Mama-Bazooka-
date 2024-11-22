@@ -11,14 +11,14 @@ script = ExtResource("1_mn2bu")
 [node name="TutorialHouse" parent="." instance=ExtResource("2_e3dn0")]
 
 [node name="Player" parent="." instance=ExtResource("2_ot471")]
-position = Vector2(-188, -128)
+position = Vector2(-224, -121)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(2, 2)
 process_callback = 0
 
 [node name="TutorialChild" parent="." instance=ExtResource("3_sfnoy")]
-position = Vector2(231, -134)
+position = Vector2(192, -65)
 
 [node name="EasterEggTimer" type="Timer" parent="."]
 wait_time = 300.0

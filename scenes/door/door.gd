@@ -4,6 +4,8 @@ extends Area2D
 
 const LEVEL_TRANSITION = "res://scenes/level_transition/level_transition.tscn"
 
+@export var open_doors: TileMapLayer
+
 @onready var in_focus: bool = false
 
 
@@ -17,6 +19,7 @@ func interact() -> void:
 
 
 func _on_child_fainted() -> void:
+	open_doors.visible = true
 	($CollisionShape2D as CollisionShape2D).set_deferred(&"disabled", false)
 
 
