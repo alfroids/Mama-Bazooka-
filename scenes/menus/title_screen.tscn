@@ -1,8 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://008gskuxxnw8"]
+[gd_scene load_steps=11 format=3 uid="uid://008gskuxxnw8"]
 
 [ext_resource type="Script" path="res://scenes/menus/title_screen.gd" id="1_vx4wm"]
 [ext_resource type="Texture2D" uid="uid://b0b73u4rueoi" path="res://assets/sprites/logo/game_logo_spr1.png" id="2_oa81u"]
-[ext_resource type="AudioStream" uid="uid://do11i8hb8apjj" path="res://assets/sounds/pizza_jam_titlescreen_song.wav" id="3_823xl"]
 [ext_resource type="Texture2D" uid="uid://b15lfxpxvgrs1" path="res://assets/sprites/logo/game_logo_spr2.png" id="3_idqi6"]
 [ext_resource type="Texture2D" uid="uid://i3dlaixdjriq" path="res://assets/sprites/logo/game_logo_spr3.png" id="4_dtnj1"]
 [ext_resource type="Texture2D" uid="uid://bfpkkyh5y6y82" path="res://assets/sprites/logo/game_logo_spr4.png" id="5_eqf4c"]
@@ -26,19 +25,19 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("MarginContainer:position")
+tracks/0/path = NodePath("MarginContainer/VBoxContainer/Start:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 0)]
+"values": [Color(1, 1, 1, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("MarginContainer/VBoxContainer/Start:modulate")
+tracks/1/path = NodePath("MarginContainer/VBoxContainer/Credits:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -50,7 +49,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("MarginContainer/VBoxContainer/Credits:modulate")
+tracks/2/path = NodePath("MarginContainer/VBoxContainer/Quit:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -62,19 +61,19 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("MarginContainer/VBoxContainer/Quit:modulate")
+tracks/3/path = NodePath("MarginContainer/VBoxContainer/Start:disabled")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
+"update": 1,
+"values": [false]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("MarginContainer/VBoxContainer/Start:disabled")
+tracks/4/path = NodePath("MarginContainer/VBoxContainer/Credits:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -86,7 +85,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("MarginContainer/VBoxContainer/Credits:disabled")
+tracks/5/path = NodePath("MarginContainer/VBoxContainer/Quit:disabled")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -98,14 +97,14 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("MarginContainer/VBoxContainer/Quit:disabled")
+tracks/6/path = NodePath(".:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [Vector2(0, -300)]
 }
 
 [sub_resource type="Animation" id="Animation_exrc0"]
@@ -115,23 +114,23 @@ step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("MarginContainer:position")
+tracks/0/path = NodePath("MarginContainer/VBoxContainer/Start:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.0666667, 1),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 3, 3.5),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(0, -200), Vector2(0, 100)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("MarginContainer/VBoxContainer/Start:modulate")
+tracks/1/path = NodePath("MarginContainer/VBoxContainer/Credits:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 2, 2.5),
+"times": PackedFloat32Array(0, 3, 3.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -139,11 +138,11 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("MarginContainer/VBoxContainer/Credits:modulate")
+tracks/2/path = NodePath("MarginContainer/VBoxContainer/Quit:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 2, 2.5),
+"times": PackedFloat32Array(0, 3, 3.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -151,23 +150,23 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("MarginContainer/VBoxContainer/Quit:modulate")
+tracks/3/path = NodePath("MarginContainer/VBoxContainer/Start:disabled")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 2, 2.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("MarginContainer/VBoxContainer/Start:disabled")
+tracks/4/path = NodePath("MarginContainer/VBoxContainer/Credits:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 2.5),
+"times": PackedFloat32Array(0, 3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -175,11 +174,11 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("MarginContainer/VBoxContainer/Credits:disabled")
+tracks/5/path = NodePath("MarginContainer/VBoxContainer/Quit:disabled")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 2.5),
+"times": PackedFloat32Array(0, 3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -187,14 +186,14 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("MarginContainer/VBoxContainer/Quit:disabled")
+tracks/6/path = NodePath(".:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "times": PackedFloat32Array(0, 2.5),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
+"update": 0,
+"values": [Vector2(0, -300), Vector2(0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dlmbh"]
@@ -208,16 +207,12 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -300.0
+offset_bottom = -300.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vx4wm")
 tutorial = "res://scenes/tutorial/tutorial.tscn"
-
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 2
-offset_right = 1280.0
-offset_bottom = 720.0
-expand_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -226,27 +221,35 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_bottom = 20
+theme_override_constants/margin_left = 128
+theme_override_constants/margin_right = 128
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_constants/separation = 16
+alignment = 1
 
 [node name="Logo" type="TextureRect" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 texture = SubResource("AnimatedTexture_cyn2c")
 
 [node name="Start" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(128, 0)
 layout_mode = 2
+size_flags_horizontal = 4
 text = "START"
 
 [node name="Credits" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(128, 0)
 layout_mode = 2
+size_flags_horizontal = 4
 text = "CREDITS"
 
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(128, 0)
 layout_mode = 2
+size_flags_horizontal = 4
 text = "QUIT"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -254,10 +257,6 @@ libraries = {
 "": SubResource("AnimationLibrary_dlmbh")
 }
 autoplay = "revealing_info"
-
-[node name="TitleSong" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_823xl")
-autoplay = true
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Credits" to="." method="_on_credits_pressed"]

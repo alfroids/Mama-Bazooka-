@@ -20,6 +20,8 @@ config/icon="res://icon.svg"
 Manager="*res://globals/manager.gd"
 Music="res://globals/music.tscn"
 AudioController="*res://globals/audio_controller.gd"
+SFXController="*res://globals/sfx_controller.gd"
+SignalBus="*res://globals/signal_bus.gd"
 
 [display]
 

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=4 uid="uid://bfxp3a4g5esn8"]
+[gd_scene load_steps=3 format=4 uid="uid://bfxp3a4g5esn8"]
 
 [ext_resource type="TileSet" uid="uid://bu0nl7hg8gawk" path="res://scenes/new_house/house_tileset.tres" id="1_6o4lf"]
+[ext_resource type="PackedScene" uid="uid://dn5spyqikuik2" path="res://scenes/door/door.tscn" id="2_j1dv8"]
 
 [node name="House" type="Node2D"]
 scale = Vector2(2, 2)
@@ -16,3 +17,6 @@ tile_set = ExtResource("1_6o4lf")
 [node name="DecorationsTop" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAFAPX/AAAIAAIAAAAGAPX/AAAJAAIAAAD4//X/AAAIAAIAAAD5//X/AAAJAAIAAAAGAPr/AAAGAAEAAAAHAPr/AAAHAAEAAAAAAPX/AAAIAAIAAAABAPX/AAAJAAIAAAAAAPb/AAADAAQAAAABAPb/AAAEAAQAAAAJAPr/AAAAAAQAAAD3//j/AAAAAAEAAAD3//n/AAAAAAEAAAD6//j/AAAAAAEAABD6//n/AAAAAAEAABD4//b/AAADAAQAAAD5//b/AAAEAAQAAAD7////AAADAAEAAAD///7/AAAGAAMAAAD/////AAAGAAQAAAAAAP7/AAAHAAMAAAAAAP//AAAHAAQAAAA=")
 tile_set = ExtResource("1_6o4lf")
+
+[node name="Door" parent="." instance=ExtResource("2_j1dv8")]
+position = Vector2(0, -12)

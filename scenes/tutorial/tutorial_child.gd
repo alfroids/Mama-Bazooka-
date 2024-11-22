@@ -2,7 +2,12 @@ extends Child
 
 
 func _physics_process(delta: float) -> void:
-	if hp > 3:
+	if is_fainted:
+		return
+
+	set_offscreen_indicator()
+
+	if hp == 3:
 		return
 
 	var player_dir: Vector2
