@@ -27,7 +27,7 @@ tile_set = ExtResource("2_l5eq5")
 tile_set = ExtResource("2_l5eq5")
 
 [node name="Door" parent="." node_paths=PackedStringArray("open_doors") instance=ExtResource("3_pl08k")]
-position = Vector2(16, -148)
+position = Vector2(16, -160.5)
 open_doors = NodePath("../OpenDoors")
 
 [node name="PlayerSpawn" type="Marker2D" parent="."]

@@ -29,7 +29,7 @@ tile_map_data = PackedByteArray("AAD3//X/AAAIAAIAAAD4//X/AAAJAAIAAADy//X/AAAHAAI
 tile_set = ExtResource("2_lm8m0")
 
 [node name="Door" parent="." node_paths=PackedStringArray("open_doors") instance=ExtResource("3_ltd12")]
-position = Vector2(16, -148)
+position = Vector2(16, -161)
 open_doors = NodePath("../OpenDoors")
 
 [node name="PlayerSpawn" type="Marker2D" parent="."]

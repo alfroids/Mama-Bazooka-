@@ -25,4 +25,64 @@ wait_time = 300.0
 one_shot = true
 autostart = true
 
+[node name="Tutorial1" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -315.0
+offset_top = -102.0
+offset_right = -122.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+text = "Looks like your child has made a mess, go teach them a lesson!
+
+WASD to move
+Left-click to hit with your flip flop"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Tutorial2" type="Label" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 126.0
+offset_top = -211.0
+offset_right = 317.0
+offset_bottom = -134.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+text = "It takes three hits for them to truly understand"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Tutorial3" type="Label" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -318.0
+offset_right = 179.0
+offset_bottom = -241.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+text = "I think your child has finally learned, but there are other mischievous kids out there.
+Go after them -- but their mothers won't take it lying down!"
+horizontal_alignment = 1
+autowrap_mode = 3
+
 [connection signal="timeout" from="EasterEggTimer" to="." method="_on_easter_egg_timer_timeout"]
