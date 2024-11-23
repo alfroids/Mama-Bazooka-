@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bvbottqofkjj3"]
+[gd_scene load_steps=6 format=3 uid="uid://bvbottqofkjj3"]
 
 [ext_resource type="Script" path="res://scenes/tutorial/tutorial.gd" id="1_mn2bu"]
 [ext_resource type="PackedScene" uid="uid://ds2ucksgf7aex" path="res://scenes/tutorial/tutorial_house.tscn" id="2_e3dn0"]
 [ext_resource type="PackedScene" uid="uid://cllgnoyqonuhs" path="res://scenes/player/player.tscn" id="2_ot471"]
 [ext_resource type="PackedScene" uid="uid://0brj4rscmc1b" path="res://scenes/tutorial/tutorial_child.tscn" id="3_sfnoy"]
+[ext_resource type="PackedScene" uid="uid://bdwycipbwnmda" path="res://scenes/menus/pause_menu.tscn" id="5_uvxnk"]
 
 [node name="Tutorial" type="Node2D"]
 script = ExtResource("1_mn2bu")
@@ -84,5 +85,10 @@ text = "I think your child has finally learned, but there are other mischievous 
 Go after them -- but their mothers won't take it lying down!"
 horizontal_alignment = 1
 autowrap_mode = 3
+
+[node name="Menus" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="Menus" instance=ExtResource("5_uvxnk")]
+visible = false
 
 [connection signal="timeout" from="EasterEggTimer" to="." method="_on_easter_egg_timer_timeout"]

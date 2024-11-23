@@ -212,7 +212,6 @@ offset_bottom = -300.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vx4wm")
-tutorial = "res://scenes/tutorial/tutorial.tscn"
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1

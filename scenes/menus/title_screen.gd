@@ -1,7 +1,7 @@
 extends Control
 
-
-@export_file("*.tscn") var tutorial: String
+const TUTORIAL: String = "res://scenes/tutorial/tutorial.tscn"
+const CREDITS: String = "res://scenes/menus/credits.tscn"
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer as AnimationPlayer
 
@@ -13,11 +13,11 @@ func _ready() -> void:
 
 
 func _on_start_pressed():
-	get_tree().change_scene_to_file(tutorial)
+	get_tree().change_scene_to_file(TUTORIAL)
 
 
 func _on_credits_pressed():
-	pass # Replace with function body.
+	get_tree().change_scene_to_file(CREDITS)
 
 
 func _on_quit_pressed():
