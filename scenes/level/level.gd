@@ -77,7 +77,7 @@ func _on_child_fainted() -> void:
 	is_level_over = true
 	horde_size += 1
 	#defeat_timer.paused = true
-	defeat_timer.start(defeat_timer.wait_time)
+	#defeat_timer.start(defeat_timer.wait_time)
 
 
 func _unhandled_input(event: InputEvent) -> void:

@@ -26,6 +26,7 @@ shape = SubResource("RectangleShape2D_5w8hw")
 
 [node name="OffScreenIndicator" type="Polygon2D" parent="Anchor"]
 position = Vector2(-8, 0)
+color = Color(0.0784314, 0.203922, 0.392157, 1)
 polygon = PackedVector2Array(-8, -8, -8, 8, 8, 0)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

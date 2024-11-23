@@ -25,6 +25,7 @@ shape = SubResource("RectangleShape2D_hl4iq")
 
 [node name="OffScreenIndicator" type="Polygon2D" parent="Anchor"]
 position = Vector2(-8, 0)
+color = Color(0.0784314, 0.203922, 0.392157, 1)
 polygon = PackedVector2Array(-8, -8, -8, 8, 8, 0)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]

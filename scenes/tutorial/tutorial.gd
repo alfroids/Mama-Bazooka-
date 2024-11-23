@@ -5,6 +5,11 @@ extends Node2D
 
 
 func _ready() -> void:
+	Hud.visible = true
+	Hud.set_time_left(1)
+	Hud.set_hits_left(3)
+	tree_exited.connect(Hud.hide)
+
 	AudioController.play_main_song()
 	SignalBus.child_fainted.connect(_on_child_fainted)
 

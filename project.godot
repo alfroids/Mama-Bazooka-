@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="Mama Bazooka!"
-run/main_scene="res://scenes/houses/house_1.tscn"
+config/name="Momagedon"
+run/main_scene="res://scenes/cutscenes/intro_warning.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 

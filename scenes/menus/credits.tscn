@@ -30,13 +30,19 @@ vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-text = "Art, musinc and sound by chpassos"
+text = "Art and music by chpassos"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label3" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 text = "Programming by alfroids"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "SFX by AntumDeluge and remaxim"
 horizontal_alignment = 1
 vertical_alignment = 1
 

@@ -11,7 +11,7 @@ func _ready() -> void:
 
 
 func play_intro_song() -> void:
-	volume_db = -5
+	volume_db = -2
 	stream = INTRO_SONG
 	play()
 
@@ -23,6 +23,6 @@ func play_main_song() -> void:
 
 
 func play_titlescreen_song() -> void:
-	volume_db = -5
+	volume_db = 0
 	stream = TITLESCREEN_SONG
 	play()
