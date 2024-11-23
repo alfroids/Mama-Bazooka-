@@ -22,6 +22,11 @@ var mother: Mother
 
 
 func _ready() -> void:
+	Hud.visible = true
+	Hud.set_time_left(1)
+	Hud.set_hits_left(3)
+	tree_exited.connect(Hud.hide)
+
 	SignalBus.child_fainted.connect(_on_child_fainted)
 
 	var house_scene: PackedScene = house_scenes.pick_random()
@@ -50,14 +55,18 @@ func _ready() -> void:
 	add_child(child)
 
 
+func _process(_delta: float) -> void:
+	Hud.set_time_left(defeat_timer.time_left / defeat_timer.wait_time)
+
+
 func _on_defeat_timer_timeout() -> void:
 	defeat_screen.enable()
 
 
 func _on_horde_timer_timeout() -> void:
 	for _i in range(horde_size):
-		if is_level_over:
-			break
+		#if is_level_over:
+			#break
 		var m: Mother = mother_scene.instantiate() as Mother
 		m.global_position = house.player_spawn.global_position
 		add_child(m)
@@ -67,7 +76,8 @@ func _on_horde_timer_timeout() -> void:
 func _on_child_fainted() -> void:
 	is_level_over = true
 	horde_size += 1
-	defeat_timer.stop()
+	#defeat_timer.paused = true
+	defeat_timer.start(defeat_timer.wait_time)
 
 
 func _unhandled_input(event: InputEvent) -> void:

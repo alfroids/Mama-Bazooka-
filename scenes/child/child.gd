@@ -79,6 +79,7 @@ func set_offscreen_indicator() -> void:
 
 func hit() -> void:
 	hp -= 1
+	Hud.set_hits_left(hp)
 	if hp <= 0:
 		is_fainted = true
 		SignalBus.child_fainted.emit()

@@ -22,12 +22,12 @@ Music="res://globals/music.tscn"
 AudioController="*res://globals/audio_controller.gd"
 SFXController="*res://globals/sfx_controller.gd"
 SignalBus="*res://globals/signal_bus.gd"
+Hud="*res://scenes/hud/hud.tscn"
 
 [display]
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
-window/size/mode=3
 window/stretch/mode="viewport"
 window/stretch/aspect="keep_height"
 window/stretch/scale_mode="integer"

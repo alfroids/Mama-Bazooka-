@@ -22,7 +22,7 @@ child_scene = ExtResource("4_siesw")
 mother_scene = ExtResource("5_1ghes")
 
 [node name="DefeatTimer" type="Timer" parent="."]
-wait_time = 30.0
+wait_time = 15.0
 one_shot = true
 autostart = true
 
