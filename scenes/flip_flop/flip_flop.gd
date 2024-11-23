@@ -14,7 +14,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		collision_shape_2d.disabled = false
 		active_timer.start()
 		reload_timer.start()
-		
+
 		flipflop_sound.play()
 
 

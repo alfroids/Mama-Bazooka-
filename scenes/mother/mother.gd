@@ -48,6 +48,22 @@ func hit() -> void:
 	stun_timer.start()
 	release_player()
 
+	sprite.rotation = PI / 2
+	sprite.position = 16 * Vector2.LEFT
+	var tween: Tween = create_tween()
+	tween.tween_property(
+		sprite,
+		^"rotation",
+		0,
+		0.25,
+	).set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
+	tween.parallel().tween_property(
+		sprite,
+		^"position",
+		Vector2.ZERO,
+		0.25
+	).set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
+
 
 func grab_player() -> void:
 	is_grabbing_player = true
